@@ -1,5 +1,6 @@
 package app;
 
+import java.time.LocalTime;
 import java.util.HashMap;
 
 public class Timetable {
@@ -260,6 +261,9 @@ public class Timetable {
 		int clashes = 0;
 
 		for (Class classA : this.classes) {
+			LocalTime startA = LocalTime.of(classA.getStartHours(), 0);
+			LocalTime finishA = LocalTime.of(classA.getfinishHours(), 0);
+
 			// Check room capacity
 			int roomCapacity = this.getRoom(classA.getRoomID()).getcapacity();
 			int groupSize = this.getGroup(classA.getGroupID()).getGroupSize();
@@ -270,8 +274,13 @@ public class Timetable {
 
 			// Check if room is taken
 			for (Class classB : this.classes) {
-				if (classA.getRoomID() == classB.getRoomID() && classA.getClassId() != classB.getClassId()
-				&& classB.getStartHours() == classA.getStartHours() && classB.getfinishHours() == classA.getfinishHours()) {
+				LocalTime startB = LocalTime.of(classB.getStartHours(), 0);
+				LocalTime finishB = LocalTime.of(classB.getfinishHours(), 0);
+
+				Boolean overlap = ((startA.isBefore(finishB)) && (finishA.isAfter(startB)));
+				if (classA.getRoomID() == classB.getRoomID() 
+				&& classA.getClassId() != classB.getClassId() 
+				&& overlap && classA.getDay() == classB.getDay()) {
 					clashes++;
 					break;
 				}
@@ -279,8 +288,13 @@ public class Timetable {
 
 			// Check if professor is available
 			for (Class classB : this.classes) {
-				if (classA.getProfessorID() == classB.getProfessorID() && classA.getClassId() != classB.getClassId()
-				&& classB.getStartHours() == classA.getStartHours() && classB.getfinishHours() == classA.getfinishHours() ) {
+				LocalTime startB = LocalTime.of(classB.getStartHours(), 0);
+				LocalTime finishB = LocalTime.of(classB.getfinishHours(), 0);
+
+				Boolean overlap = ((startA.isBefore(finishB)) && (finishA.isAfter(startB)));
+				if (classA.getProfessorID() == classB.getProfessorID() 
+				&& classA.getClassId() != classB.getClassId()
+						&& overlap  && classA.getDay() == classB.getDay()) {
 					clashes++;
 					break;
 				}

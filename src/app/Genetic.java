@@ -1,5 +1,7 @@
 package app;
 
+import java.util.stream.IntStream;
+
 public class Genetic {
     private int populationSize;
     private double mutationRate;
@@ -21,10 +23,9 @@ public class Genetic {
         return population;
     }
 
-
     public double calcFitness(Individual individual, Timetable timetable) {
         Timetable threadTimetable = new Timetable(timetable);
-        threadTimetable.createClasses(individual,timetable);
+        threadTimetable.createClasses(individual, timetable);
         int clash = threadTimetable.calcClashes();
         double fitness = 1 / (double) (1 + clash);
         individual.setFitness(fitness);
@@ -32,6 +33,8 @@ public class Genetic {
     }
 
     public void evalutePopulation(Population population, Timetable timetable) {
+        IntStream.range(0, population.size()).parallel()
+                .forEach(i -> this.calcFitness(population.getIndividual(i), timetable));
         double populationFitness = 0;
         for (Individual individual : population.getIndividuals()) {
             populationFitness += this.calcFitness(individual, timetable);
@@ -66,7 +69,7 @@ public class Genetic {
 
                         offspring.setGene(gene, parent1.getGene(gene));
                     } else {
-                        
+
                         offspring.setGene(gene, parent2.getGene(gene));
                     }
                 }
@@ -94,11 +97,12 @@ public class Genetic {
         }
         return newPopulation;
     }
-    public boolean isTerminationConditionMet(int generationsCount, int maxGenerations) {
-		return (generationsCount > maxGenerations);
-	}
 
-	public boolean isTerminationConditionMet(Population population) {
-		return population.getFittest(0).getFitness() == 1.0;
-	}
+    public boolean isTerminationConditionMet(int generationsCount, int maxGenerations) {
+        return (generationsCount > maxGenerations);
+    }
+
+    public boolean isTerminationConditionMet(Population population) {
+        return population.getFittest(0).getFitness() == 1.0;
+    }
 }

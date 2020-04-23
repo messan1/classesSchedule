@@ -21,6 +21,7 @@ public class App {
         timetable.addProfessor(7, "Assena");
         timetable.addProfessor(8, "elo");
         timetable.addProfessor(9, "Nadia");
+        
 
         // timeslots
         timetable.addTimeslot(7, "7", 7);
@@ -70,7 +71,7 @@ public class App {
 
         GA.evalutePopulation(population, timetable);
 
-        while (GA.isTerminationConditionMet(generation, 1000) == false
+        while (GA.isTerminationConditionMet(generation, 100000) == false
                 && GA.isTerminationConditionMet(population) == false) {
             System.out.println("G" + generation + " Best fitness: " + population.getFittest(0).getFitness());
 
