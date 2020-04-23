@@ -112,6 +112,7 @@ public class App {
             System.out.println("Group: " + timetable.getGroup(bestClass.getGroupID()).getGroupId());
             System.out.println("Room: " + timetable.getRoom(bestClass.getRoomID()).getroomName());
             System.out.println("Professor: " + timetable.getProfessor(bestClass.getProfessorID()).getprofessorName());
+            System.out.println("Day: " + bestClass.getDay());
             System.out.println("Start Time: " + bestClass.getStartHours());
             System.out.println("Finsih Time: " + bestClass.getfinishHours());
             System.out.println("-----");
