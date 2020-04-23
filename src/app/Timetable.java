@@ -68,7 +68,7 @@ public class Timetable {
 		this.timeslots.put(timeslotId, new Timeslot(timeslotId, timeslot, starthours));
 	}
 
-	public void createClasses(Individual individual) {
+	public void createClasses(Individual individual, Timetable timetable) {
 		// Init classes
 		Class classes[] = new Class[this.getNumClasses()];
 
@@ -89,14 +89,17 @@ public class Timetable {
 				classes[classIndex].addRoomID(chromosome[chromosomePos]);
 				chromosomePos++;
 
-				// Add module
+				// Add professor
 				classes[classIndex].addProfessorID(chromosome[chromosomePos]);
 				chromosomePos++;
 
 				// Add timeslot
+				int starthours = chromosome[chromosomePos];
 				classes[classIndex].addStartHours(chromosome[chromosomePos]);
 				chromosomePos++;
 
+				int hours = timetable.getModule(moduleId).getModuleHours();
+				classes[classIndex].addfinishHours(starthours + hours);
 				classIndex++;
 			}
 		}
@@ -267,8 +270,8 @@ public class Timetable {
 
 			// Check if room is taken
 			for (Class classB : this.classes) {
-				if (classA.getRoomID() == classB.getRoomID() && classA.getStartHours() == classB.getStartHours()
-						&& classA.getClassId() != classB.getClassId()) {
+				if (classA.getRoomID() == classB.getRoomID() && classA.getClassId() != classB.getClassId()
+				&& classB.getStartHours() == classA.getStartHours() && classB.getfinishHours() == classA.getfinishHours()) {
 					clashes++;
 					break;
 				}
@@ -276,9 +279,8 @@ public class Timetable {
 
 			// Check if professor is available
 			for (Class classB : this.classes) {
-				if (classA.getProfessorID() == classB.getProfessorID()
-						&& classA.getStartHours() == classB.getStartHours()
-						&& classA.getClassId() != classB.getClassId()) {
+				if (classA.getProfessorID() == classB.getProfessorID() && classA.getClassId() != classB.getClassId()
+				&& classB.getStartHours() == classA.getStartHours() && classB.getfinishHours() == classA.getfinishHours() ) {
 					clashes++;
 					break;
 				}

@@ -7,7 +7,7 @@ public class Class {
     private int moduleID;
     private int startHours;
     private int finishHours;
-    private final int classId;
+    private int classId;
     private int day;
 
     public Class(int classId, int groupID, int moduleID) {

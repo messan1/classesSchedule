@@ -23,30 +23,17 @@ public class App {
         timetable.addProfessor(9, "Nadia");
 
         // timeslots
-        timetable.addTimeslot(1, "1", 7);
-        timetable.addTimeslot(2, "2", 8);
-        timetable.addTimeslot(3, "3", 9);
-        timetable.addTimeslot(4, "4", 10);
-        timetable.addTimeslot(5, "5", 11);
-        timetable.addTimeslot(6, "6", 12);
-        timetable.addTimeslot(7, "7", 13);
-        timetable.addTimeslot(8, "8", 14);
-        timetable.addTimeslot(9, "9", 15);
-        timetable.addTimeslot(10, "10", 16);
-        timetable.addTimeslot(11, "11", 17);
-        timetable.addTimeslot(12, "12", 18);
-        timetable.addTimeslot(13, "13", 19);
-        timetable.addTimeslot(14, "14", 20);
-        timetable.addTimeslot(15, "15", 21);
-        timetable.addTimeslot(16, "16", 22);
-        timetable.addTimeslot(17, "17", 23);
-        timetable.addTimeslot(18, "18", 24);
-        timetable.addTimeslot(19, "19", 1);
-        timetable.addTimeslot(20, "20", 2);
-        timetable.addTimeslot(21, "21", 3);
-        timetable.addTimeslot(22, "22", 4);
-        timetable.addTimeslot(23, "23", 5);
-        timetable.addTimeslot(24, "24", 6);
+        timetable.addTimeslot(7, "7", 7);
+        timetable.addTimeslot(8, "8", 8);
+        timetable.addTimeslot(9, "9", 9);
+        timetable.addTimeslot(10, "10", 10);
+        timetable.addTimeslot(11, "11", 11);
+        timetable.addTimeslot(12, "12", 12);
+        timetable.addTimeslot(13, "13", 13);
+        timetable.addTimeslot(14, "14", 14);
+        timetable.addTimeslot(15, "15", 15);
+        timetable.addTimeslot(17, "17", 17);
+        timetable.addTimeslot(18, "18", 18);
 
         // rooms
         timetable.addRoom(0, "B1", 100);
@@ -96,7 +83,7 @@ public class App {
             generation++;
 
         }
-        timetable.createClasses(population.getFittest(0));
+        timetable.createClasses(population.getFittest(0),timetable);
         System.out.println();
         System.out.println("Solution found in " + generation + " generations");
         System.out.println("Final solution fitness: " + population.getFittest(0).getFitness());
