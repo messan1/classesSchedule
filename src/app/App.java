@@ -23,12 +23,6 @@ public class App {
         timetable.addProfessor(9, "Nadia");
 
         // timeslots
-        timetable.addTimeslot(1, "1", 1);
-        timetable.addTimeslot(2, "2", 2);
-        timetable.addTimeslot(3, "3", 3);
-        timetable.addTimeslot(4, "4", 4);
-        timetable.addTimeslot(5, "5", 5);
-        timetable.addTimeslot(6, "6", 6);
         timetable.addTimeslot(7, "7", 7);
         timetable.addTimeslot(8, "8", 8);
         timetable.addTimeslot(9, "9", 9);
@@ -40,7 +34,6 @@ public class App {
         timetable.addTimeslot(15, "15", 15);
         timetable.addTimeslot(17, "17", 17);
         timetable.addTimeslot(18, "18", 18);
-        timetable.addTimeslot(19, "1", 19);
 
         // rooms
         timetable.addRoom(0, "B1", 100);
