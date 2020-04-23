@@ -271,8 +271,7 @@ public class Timetable {
 			// Check if room is taken
 			for (Class classB : this.classes) {
 				if (classA.getRoomID() == classB.getRoomID() && classA.getClassId() != classB.getClassId()
-						&& (classB.getStartHours() < classA.getStartHours()
-								|| classB.getfinishHours() > classA.getfinishHours())) {
+				&& classB.getStartHours() == classA.getStartHours() && classB.getfinishHours() == classA.getfinishHours()) {
 					clashes++;
 					break;
 				}
@@ -281,8 +280,7 @@ public class Timetable {
 			// Check if professor is available
 			for (Class classB : this.classes) {
 				if (classA.getProfessorID() == classB.getProfessorID() && classA.getClassId() != classB.getClassId()
-						&& (classB.getStartHours() < classA.getStartHours()
-								|| classB.getfinishHours() > classA.getfinishHours())) {
+				&& classB.getStartHours() == classA.getStartHours() && classB.getfinishHours() == classA.getfinishHours() ) {
 					clashes++;
 					break;
 				}
