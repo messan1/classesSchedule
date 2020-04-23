@@ -24,7 +24,7 @@ public class Genetic {
 
     public double calcFitness(Individual individual, Timetable timetable) {
         Timetable threadTimetable = new Timetable(timetable);
-        threadTimetable.createClasses(individual);
+        threadTimetable.createClasses(individual,timetable);
         int clash = threadTimetable.calcClashes();
         double fitness = 1 / (double) (1 + clash);
         individual.setFitness(fitness);
