@@ -71,7 +71,7 @@ public class App {
 
         GA.evalutePopulation(population, timetable);
 
-        while (GA.isTerminationConditionMet(generation, 100000) == false
+        while (GA.isTerminationConditionMet(generation, 1000) == false
                 && GA.isTerminationConditionMet(population) == false) {
             System.out.println("G" + generation + " Best fitness: " + population.getFittest(0).getFitness());
 
