@@ -1,5 +1,7 @@
 package app;
 
+import java.time.LocalTime;
+
 public class Unvailable {
     private int day;
     private int startHours;
@@ -43,5 +45,15 @@ public class Unvailable {
 
     public void setgroupID(int groupID) {
         this.groupID = groupID;
+    }
+
+    public LocalTime getStarthours() {
+        LocalTime time = LocalTime.of(this.startHours, 0);
+        return time;
+    }
+
+    public LocalTime getFinishhours() {
+        LocalTime time = LocalTime.of(this.finishHours, 0);
+        return time;
     }
 }

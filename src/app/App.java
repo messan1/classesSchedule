@@ -4,13 +4,110 @@ public class App {
     public static void main(String[] args) throws Exception {
         Timetable timetable = new Timetable();
         // Groupes
-        timetable.addGroup(1, "6eme", 25, new int[] { 1, 2, 3 });
+        timetable.addGroup(1, "6eme", 25, new int[] { 1, 2, 3, 4, 5, 6, 7, 8  });
         timetable.addGroup(2, "5eme", 30, new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });
         timetable.addGroup(3, "3eme", 30, new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });
         timetable.addGroup(4, "2nd", 54, new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });
         timetable.addGroup(5, "1ere", 10, new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });
         timetable.addGroup(6, "tle", 90, new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });
         timetable.addGroup(7, "tlec", 30, new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });
+
+        //GroupeUnaivaibale
+        timetable.addUnvailableGroup(1, 0, 12, 14, 1);
+        timetable.addUnvailableGroup(2, 0, 12, 14, 1);
+        timetable.addUnvailableGroup(3, 0, 12, 14, 1);
+        timetable.addUnvailableGroup(4, 0, 12, 14, 1);
+        timetable.addUnvailableGroup(5, 0, 12, 14, 1);
+        timetable.addUnvailableGroup(6, 0, 12, 14, 1);
+        timetable.addUnvailableGroup(7, 0, 12, 14, 1);
+
+        timetable.addUnvailableGroup(8, 1, 12, 14, 1);
+        timetable.addUnvailableGroup(9, 1, 12, 14, 1);
+        timetable.addUnvailableGroup(10, 1, 12, 14, 1);
+        timetable.addUnvailableGroup(11, 1, 12, 14, 1);
+        timetable.addUnvailableGroup(12, 1, 12, 14, 1);
+        timetable.addUnvailableGroup(13, 1, 12, 14, 1);
+        timetable.addUnvailableGroup(14, 1, 12, 14, 1);
+
+        timetable.addUnvailableGroup(15, 2, 12, 14, 1);
+        timetable.addUnvailableGroup(16, 2, 12, 14, 1);
+        timetable.addUnvailableGroup(17, 2, 12, 14, 1);
+        timetable.addUnvailableGroup(18, 2, 12, 14, 1);
+        timetable.addUnvailableGroup(19, 2, 12, 14, 1);
+        timetable.addUnvailableGroup(20, 2, 12, 14, 1);
+        timetable.addUnvailableGroup(21, 2, 12, 14, 1);
+
+        timetable.addUnvailableGroup(22, 3, 12, 14, 1);
+        timetable.addUnvailableGroup(23, 3, 12, 14, 1);
+        timetable.addUnvailableGroup(24, 3, 12, 14, 1);
+        timetable.addUnvailableGroup(25, 3, 12, 14, 1);
+        timetable.addUnvailableGroup(26, 3, 12, 14, 1);
+        timetable.addUnvailableGroup(27, 3, 12, 14, 1);
+        timetable.addUnvailableGroup(28, 3, 12, 14, 1);
+
+        timetable.addUnvailableGroup(29, 4, 12, 14, 1);
+        timetable.addUnvailableGroup(30, 4, 12, 14, 1);
+        timetable.addUnvailableGroup(31, 4, 12, 14, 1);
+        timetable.addUnvailableGroup(32, 4, 12, 14, 1);
+        timetable.addUnvailableGroup(33, 4, 12, 14, 1);
+        timetable.addUnvailableGroup(34, 4, 12, 14, 1);
+        timetable.addUnvailableGroup(35, 4, 12, 14, 1);
+
+        timetable.addUnvailableGroup(36, 5, 12, 14, 1);
+        timetable.addUnvailableGroup(37, 5, 12, 14, 1);
+        timetable.addUnvailableGroup(38, 5, 12, 14, 1);
+        timetable.addUnvailableGroup(39, 5, 12, 14, 1);
+        timetable.addUnvailableGroup(40, 5, 12, 14, 1);
+        timetable.addUnvailableGroup(41, 5, 12, 14, 1);
+
+        timetable.addUnvailableGroup(1, 0, 18, 21, 1);
+        timetable.addUnvailableGroup(2, 0, 18, 21, 1);
+        timetable.addUnvailableGroup(3, 0, 18, 21, 1);
+        timetable.addUnvailableGroup(4, 0, 18, 21, 1);
+        timetable.addUnvailableGroup(5, 0, 18, 21, 1);
+        timetable.addUnvailableGroup(6, 0, 18, 21, 1);
+        timetable.addUnvailableGroup(7, 0, 18, 21, 1);
+
+        timetable.addUnvailableGroup(8, 1, 18, 21, 1);
+        timetable.addUnvailableGroup(9, 1, 18, 21, 1);
+        timetable.addUnvailableGroup(10, 1, 18, 21, 1);
+        timetable.addUnvailableGroup(11, 1, 18, 21, 1);
+        timetable.addUnvailableGroup(18, 1, 18, 21, 1);
+        timetable.addUnvailableGroup(13, 1, 18, 21, 1);
+        timetable.addUnvailableGroup(21, 1, 18, 21, 1);
+
+        timetable.addUnvailableGroup(15, 2, 18, 21, 1);
+        timetable.addUnvailableGroup(16, 2, 18, 21, 1);
+        timetable.addUnvailableGroup(17, 2, 18, 21, 1);
+        timetable.addUnvailableGroup(18, 2, 18, 21, 1);
+        timetable.addUnvailableGroup(19, 2, 18, 21, 1);
+        timetable.addUnvailableGroup(20, 2, 18, 21, 1);
+        timetable.addUnvailableGroup(21, 2, 18, 21, 1);
+
+        timetable.addUnvailableGroup(22, 3, 18, 21, 1);
+        timetable.addUnvailableGroup(23, 3, 18, 21, 1);
+        timetable.addUnvailableGroup(24, 3, 18, 21, 1);
+        timetable.addUnvailableGroup(25, 3, 18, 21, 1);
+        timetable.addUnvailableGroup(26, 3, 18, 21, 1);
+        timetable.addUnvailableGroup(27, 3, 18, 21, 1);
+        timetable.addUnvailableGroup(28, 3, 18, 21, 1);
+
+        timetable.addUnvailableGroup(29, 4, 18, 21, 1);
+        timetable.addUnvailableGroup(30, 4, 18, 21, 1);
+        timetable.addUnvailableGroup(31, 4, 18, 21, 1);
+        timetable.addUnvailableGroup(32, 4, 18, 21, 1);
+        timetable.addUnvailableGroup(33, 4, 18, 21, 1);
+        timetable.addUnvailableGroup(34, 4, 18, 21, 1);
+        timetable.addUnvailableGroup(35, 4, 18, 21, 1);
+
+        timetable.addUnvailableGroup(36, 5, 18, 21, 1);
+        timetable.addUnvailableGroup(37, 5, 18, 21, 1);
+        timetable.addUnvailableGroup(38, 5, 18, 21, 1);
+        timetable.addUnvailableGroup(39, 5, 18, 21, 1);
+        timetable.addUnvailableGroup(40, 5, 18, 21, 1);
+        timetable.addUnvailableGroup(41, 5, 18, 21, 1);
+
+
         // teachers
         timetable.addProfessor(1, "Messan");
         timetable.addProfessor(2, "Franck");
@@ -57,7 +154,7 @@ public class App {
         // Modules
         timetable.addModule(1, "Math", new int[] { 1, 5, 6 }, 2);
         timetable.addModule(2, "Fr", new int[] { 6, 7, 1 }, 3);
-        timetable.addModule(3, "Ang", new int[] { 3, 2 }, 4);
+        timetable.addModule(3, "Ang", new int[] { 3, 2 }, 2);
         timetable.addModule(4, "Philo", new int[] { 5, 1 }, 1);
         timetable.addModule(5, "esp", new int[] { 1, 9, 8 }, 1);
         timetable.addModule(6, "algo", new int[] { 9, 5, 6 }, 2);
